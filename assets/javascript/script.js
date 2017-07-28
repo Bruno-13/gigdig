@@ -208,7 +208,7 @@ function getAllArtistInfo(input){
 //search artist name on seat geek api. we are looking for the id of the artist to use for next search
 $.ajax({
  type:"GET",
- url:'https://api.seatgeek.com/2/performers?client_id=NzIyODkxOHwxNDkxMjY2NjExLjMy&q='+artistName,
+ url:'https://api.seatgeek.com/2/performers?client_id=NzIyODkyMHwxNDkxMjY2OTQxLjY1&q='+artistName,
  async:true,
  dataType: "json",
  success: function(json) {
@@ -219,7 +219,7 @@ $.ajax({
 	//search seat geek for events related to our artist's ID
 		$.ajax({
 			type:"GET",
-			url:"https://api.seatgeek.com/2/events?client_id=NzIyODkxOHwxNDkxMjY2NjExLjMy&performers.id= "+ performerId1 + '&geoip=true&range=300mi',
+			url:"https://api.seatgeek.com/2/events?client_id=NzIyODkyMHwxNDkxMjY2OTQxLjY1&performers.id= "+ performerId1 + '&geoip=true&range=300mi',
 			async:true,
 			dataType: "json",
 			success: function(results) {
