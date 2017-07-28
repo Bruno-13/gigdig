@@ -106,7 +106,7 @@ function addToFirebase(artist){
 
 };
 
-// new addition to spotify api
+/* / new addition to spotify api
 
 var SpotifyWebApi = require("../");
 
@@ -127,15 +127,26 @@ spotifyApi.clientCredentialsGrant()
     console.log('Something went wrong when retrieving an access token', err.message);
 });
 
-// spotify api key end
+*/
 
+//retrieve your token_type and token from your Spotify developer account
+var token_type = "8e0ce64f91f8441c9e631f4e4d7b0adf";
+var token = "8e0ce64f91f8441c9e631f4e4d7b0adf";
 
 function getAllArtistInfo(input){
 
 	// search for the artist in Spotify and pull out info
 	$.ajax({
 		url: "https://api.spotify.com/v1/search?query="+input+"&type=artist&market=US&offset=0&limit=3",
-		method:"GET"
+		method:"GET",
+		headers: {
+		"Content-Type: application/json",
+		"Authorization: "+token_type+" "+token
+		},
+		datatype: 'jsonp',
+		success: function(data) {
+		}
+		
 	}).done(function(response){
 		
 
