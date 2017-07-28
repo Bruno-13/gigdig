@@ -106,6 +106,29 @@ function addToFirebase(artist){
 
 };
 
+// new addition to spotify api
+
+var SpotifyWebApi = require("../");
+
+var spotifyApi = new SpotifyWebApi({
+  clientId : '<8e0ce64f91f8441c9e631f4e4d7b0adf>',
+  clientSecret : '<e24944b9040643f38807e1db895b51b9>',
+});
+
+// Retrieve an access token
+spotifyApi.clientCredentialsGrant()
+  .then(function(data) {
+    console.log('The access token expires in ' + data.body['expires_in']);
+    console.log('The access token is ' + data.body['access_token']);
+
+    // Save the access token so that it's used in future calls
+    spotifyApi.setAccessToken(data.body['access_token']);
+  }, function(err) {
+    console.log('Something went wrong when retrieving an access token', err.message);
+});
+
+// spotify api key end
+
 
 function getAllArtistInfo(input){
 
