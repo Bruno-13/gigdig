@@ -134,7 +134,7 @@ function getAllArtistInfo(input){
 		url: "https://api.spotify.com/v1/search?query="+input+"&type=artist&market=US&offset=0&limit=3",
 		method:"GET",
 		headers: {
-		"Content-Type: application/json",
+//		"Content-Type: application/json",
 		"Authorization: "+token_type+" "+token
 		},
 		datatype: 'jsonp',
