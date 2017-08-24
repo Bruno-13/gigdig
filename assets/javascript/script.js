@@ -105,7 +105,7 @@ function addToFirebase(artist){
 	});
 
 };
-
+/*
 // new addition to spotify api
 
 var SpotifyWebApi = require("../");
@@ -126,7 +126,7 @@ spotifyApi.clientCredentialsGrant()
   }, function(err) {
     console.log('Something went wrong when retrieving an access token', err.message);
   });
-
+*/
 function getAllArtistInfo(input){
 
 	// search for the artist in Spotify and pull out info
